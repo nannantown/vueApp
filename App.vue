@@ -1,9 +1,19 @@
 <template>
   <view class="container">
-    <text class="text-color-primary">My Vue Native App</text>
+    <text class="text-color-primary">{{title}}</text>
     </view>
 </template>
  
+<script>
+	export default {
+		data () {
+			return {
+				title: 'My Meetuper App 3'
+			}
+		}
+	}
+</script>
+
 <style>
 .container {
   background-color: white;
