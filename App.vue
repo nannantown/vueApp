@@ -1,22 +1,36 @@
 <template>
   <view class='container'>
-    <HomeScreen />
+    <AppNavigation />
   </view>
 </template>
  
 <script>
   import HomeScreen from '@/screens/HomeScreen'
+  import Screen1 from '@/screens/Screen1'
+  import Screen2 from '@/screens/Screen2'
+
+  import { createStackNavigator, createAppContainer } from 'react-navigation'
+
+  const HomeStack = createStackNavigator(
+      {
+          Home: HomeScreen,
+          Screen1: Screen1,
+          Screen2: Screen2
+      }
+    )
+
+    const AppNavigation = createAppContainer(HomeStack)
+
+
 	export default {
     components: {
-      HomeScreen
+      HomeScreen, AppNavigation
     }
 	}
 </script>
 <style>
   .container {
     background-color: white;
-    align-items: center;
-    justify-content: center;
     flex: 1;
   }
   .text-color-primary {
