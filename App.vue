@@ -1,30 +1,14 @@
 <template>
   <view class='container'>
-    <HomeScreen v-if="activeScreen === 'homeScreen'"
-                :testingData="testingData"
-                :navigate="navigate" />
-    <Screen1 v-if="activeScreen === 'Screen1'"
-            :navigate="navigate" />
+    <HomeScreen />
   </view>
 </template>
  
 <script>
-  import HomeScreen from './src/screens/HomeScreen'
-  import Screen1 from './src/screens/Screen1'
+  import HomeScreen from '.@/screens/HomeScreen'
 	export default {
     components: {
-      HomeScreen, Screen1
-    },
-    data () {
-      return {
-        activeScreen: 'homeScreen',
-        testingData: 'Value from App Component'
-      }
-    },
-    methods: {
-      navigate (screen) {
-        this.activeScreen = screen
-      }
+      HomeScreen
     }
 	}
 </script>
